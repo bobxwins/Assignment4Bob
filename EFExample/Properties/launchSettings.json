@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EFExample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "connString": "host=localhost;db=NorthWind;uid=postgres;pwd=bobbystyrer"
+      }
+    }
+  }
+}

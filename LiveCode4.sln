@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOExample", "ADOExample\ADOExample.csproj", "{BEE7DEA9-0D66-4CE5-9E40-B1F7DC3A7E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFExample", "EFExample\EFExample.csproj", "{B18626D0-8DA9-433C-9EC4-0185E0FB5CA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEE7DEA9-0D66-4CE5-9E40-B1F7DC3A7E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE7DEA9-0D66-4CE5-9E40-B1F7DC3A7E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE7DEA9-0D66-4CE5-9E40-B1F7DC3A7E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE7DEA9-0D66-4CE5-9E40-B1F7DC3A7E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18626D0-8DA9-433C-9EC4-0185E0FB5CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18626D0-8DA9-433C-9EC4-0185E0FB5CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18626D0-8DA9-433C-9EC4-0185E0FB5CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18626D0-8DA9-433C-9EC4-0185E0FB5CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {220894A1-B930-47A6-B5F7-1DB36353C9AA}
+	EndGlobalSection
+EndGlobal
