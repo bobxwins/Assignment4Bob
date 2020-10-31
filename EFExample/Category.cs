@@ -10,13 +10,13 @@ namespace EFExample
     public class Category
     {
         [Key]
-        public int CategoryId { get; set; }
+        public int  Id { get; set; }
         public string CategoryName { get; set; }
         public string Description { get; set; }
 
         public override string ToString()
         {
-            return $"CategoryId = {CategoryId}, Name = {CategoryName}, Description = {Description}";
+            return $"CategoryId = {Id}, CategoryName = {CategoryName}, Description = {Description}";
         }
     }
 }

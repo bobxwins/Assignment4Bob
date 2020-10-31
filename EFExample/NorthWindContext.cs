@@ -38,7 +38,7 @@ namespace EFExample
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>().ToTable("orders");
-            modelBuilder.Entity<Order>().Property(x => x.OrderId).HasColumnName("orderid");
+            modelBuilder.Entity<Order>().Property(x => x.Id).HasColumnName("orderid");
             modelBuilder.Entity<Order>().Property(x => x.CustomerId).HasColumnName("customerid");
             modelBuilder.Entity<Order>().Property(x => x.EmployeeId).HasColumnName("employeeid");
             modelBuilder.Entity<Order>().Property(x => x.OrderDate).HasColumnName("orderdate");
@@ -62,10 +62,11 @@ namespace EFExample
 
 
             modelBuilder.Entity<Category>().ToTable("categories");
-            modelBuilder.Entity<Category>().Property(x => x.CategoryId).HasColumnName("categoryid");
+            modelBuilder.Entity<Category>().Property(x => x.Id).HasColumnName("categoryid");
             modelBuilder.Entity<Category>().Property(x => x.CategoryName).HasColumnName("categoryname");
             modelBuilder.Entity<Category>().Property(x => x.Description).HasColumnName("description");
 
+            //modelBuilder.Entity<Product>().HasKey(d => new { d.ProductName, d.CategoryId });
             modelBuilder.Entity<Product>().ToTable("products");
             modelBuilder.Entity<Product>().Property(x => x.ProductId).HasColumnName("productid");
             modelBuilder.Entity<Product>().Property(x => x.ProductName).HasColumnName("productname");
