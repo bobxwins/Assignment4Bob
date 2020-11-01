@@ -9,10 +9,10 @@ namespace EFExample
 {
     class Program   
     {
-        public static Product Product { get; set; }
-        public OrderDetail OrderDetail { get; set; }
-        public Order Order { get; set; }
-        public Category Category { get; set; }
+        public   Product Product { get; set; }
+        public   OrderDetail OrderDetail { get; set; }
+        public   Order Order { get; set; }
+        public  Category Category { get; set; }
 
         public static string QuerySwitch;
         static void Main(string[] args)
@@ -23,8 +23,8 @@ namespace EFExample
                 .Build();
 
             var dataService = new DataService(config["connectionString"]);
-
-              foreach (var elem in dataService.GetOrders())
+  
+            foreach (var elem in dataService.GetOrders())
                  {
                 QuerySwitch = "1";
             
@@ -35,16 +35,31 @@ namespace EFExample
             foreach (var elem in dataService.GetOrders())
             {
                 QuerySwitch = "2";
+              
                 Console.WriteLine(elem);
        
-            }  
+            }
+             
+            foreach (var elem in dataService.GetOrderDetails())
+            {
+                QuerySwitch = "1";
  
-        } 
-         
+                Console.WriteLine(elem);
+
+            }
+            foreach (var elem in dataService.GetOrderDetails())
+            {
+                QuerySwitch = "2";
+
+                Console.WriteLine(elem);
+
+            }
+
+
+
         }
 
-         
-
-
+    }
+     
 }
 

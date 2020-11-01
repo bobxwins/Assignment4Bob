@@ -26,9 +26,7 @@ namespace EFExample
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-
          
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLoggerFactory(MyLoggerFactory);
@@ -59,8 +57,7 @@ namespace EFExample
             modelBuilder.Entity<OrderDetail>().Property(x => x.Discount).HasColumnName("discount");
 
         //    modelBuilder.Entity<OrderDetails>().HasForeignKey(p => p.OrderDetailsForeignKey);
-
-
+         
             modelBuilder.Entity<Category>().ToTable("categories");
             modelBuilder.Entity<Category>().Property(x => x.Id).HasColumnName("categoryid");
             modelBuilder.Entity<Category>().Property(x => x.CategoryName).HasColumnName("categoryname");

@@ -24,8 +24,6 @@ namespace EFExample
             return ctx.Categories.ToList();
         }
 
-       
-
         public IList<Product> GetProducts()
         {
             using var ctx = new NorthWindContext(_connectionString);
@@ -35,79 +33,84 @@ namespace EFExample
                 .ToList();
         }
         public IList<Order> GetOrders()
-        {
-
-            //Orders ord = new Orders();
+        { 
             var ctx = new NorthWindContext(_connectionString);
-            var OrderQuery1= ctx.Orders
-                    //  .Include(x => x.OrderDetail)
+            var OrderQuery1 = ctx.Orders
+                     
                     .Include("OrderDetail.Product.Category")
 
                    .Where(b => b.Id == 10747)
 
             .ToList();
 
-            var OrderQuery2 = ctx.Orders
-                    //  .Include(x => x.OrderDetail)
-                    .Include("OrderDetail.Product.Category")
-
-                   .Where(b => b.ShipName == "LILA-Supermercado")
-
-            .ToList();
+           
 
             switch (Program.QuerySwitch)
             {
-                case "1":
+                case "2":
 
                     return OrderQuery1;
 
-                case "2":
+                case "1":
+                    var OrderQuery2 = ctx.Orders
+
+            .Include("OrderDetail.Product.Category")
+
+           .Where(b => b.ShipName == "LILA-Supermercado")
+
+    .ToList();
 
                     return OrderQuery2;
 
-              /*  case "3": Dont really understand what we are supposed to do with Order Task 3
-                    return Query3; */ 
+                    /*  case "3": Dont really understand what we are supposed to do with Order Task 3
+                          return Query3; */
 
             }
-
-
-
-
+             
             return ctx.Orders
                     //  .Include(x => x.OrderDetail)
                     .Include("OrderDetail.Product.Category")
 
                    .Where(b => b.Id == 10747)
-                  
+
             .ToList();
 
-
-
-            /*   .Select(x => new Order
-                   {
-                       Id = x.Id,
-                        OrderDetail = x.ProcessID,
-                       UserName = x.Username
-                   }).ToList(); */
         }
-
+         
         public IList<OrderDetail> GetOrderDetails()
-        {
-            using (var ctx = new NorthWindContext(_connectionString))
- 
             {
-               var ordert1 = ctx.OrderDetails
+                using (var ctx = new NorthWindContext(_connectionString))
+
+                {
+                    switch (Program.QuerySwitch)
+                    {
+                        case "1":
+                            var OrderDetailsQuery1 = ctx.OrderDetails
+
+          .Include(x => x.Order)
+              .Include(x => x.Product).
+              Where(X => X.ProductId == 69).ToList();
+
+                            return OrderDetailsQuery1;
+
+                        case "2":
+                            var OrderDetailsQuery2 = ctx.OrderDetails
+
+              .Include("Product")
+              .Where(b => b.OrderId == 10747).ToList();
+
+
+                            return OrderDetailsQuery2;
  
-             .Include(x => x.Order)
-               .Include("Product.Category")
-              
-                   .ToList();
-                 
-                return ordert1;
- 
+                    }
+
+                    return ctx.OrderDetails.ToList();
+
+
+                }
+
             }
- 
-        }
         }
     }
+
 
